@@ -1,0 +1,16 @@
+; 1. Ќаписать на RAM алгоритм умножени€ двух целых неотрицательных чисел через сложение
+<input> 4 2
+read 1
+read 2
+load = 0
+store 3
+loop:
+    load 3
+    add 2
+    store 3
+    load 1
+    sub = 1
+    store 1
+jgtz loop
+write 3
+halt
