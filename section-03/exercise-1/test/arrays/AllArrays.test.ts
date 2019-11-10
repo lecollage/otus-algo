@@ -3,6 +3,7 @@ import * as assert from 'assert';
 import {expect} from 'chai';
 import {} from 'mocha';
 import {SingleArray} from '../../src/SingleArray';
+import {VectorArray} from '../../src/VectorArray';
 
 describe(`ЛОГИКА РАБОТЫ`, () => {
     describe(`SingleArray`, () => {
@@ -184,6 +185,52 @@ describe(`ЛОГИКА РАБОТЫ`, () => {
                     expect(singleArray.remove(0)).to.be.eq(1);
                     expect(singleArray.array).to.be.deep.eq([]);
                     done();
+                });
+            });
+        });
+    });
+    describe(`VectorArray`, () => {
+        describe('конструктор', () => {
+            let vectorArray: VectorArray<number> = null;
+            it('должен создаваться без ошибок', () => {
+                vectorArray = new VectorArray<number>(10);
+            });
+        });
+        describe('методы', () => {
+            describe('add', () => {
+                let vectorArray: VectorArray<number> = null;
+                beforeEach((done) => {
+                    vectorArray = new VectorArray<number>(10);
+                    done();
+                });
+                it(`при пустом массиве добавление одного значения`, () => {
+                    const n: number = -500;
+                    const index: number = 0;
+                    vectorArray.add(n, index);
+                    expect(vectorArray.get(index)).to.be.eq(n);
+                });
+                it(`при пустом массиве добавление множества значений`, () => {
+                    // const nArr: number[] = [9, 8, 7, 6, 5, 4, 3, 2, 1, -9, -8, -7, -6, -5, -4, -3, -2, -1];
+                    const nArr: number[] = [9, 8, 7, 6, 5, 4, 3, 2, 1];
+                    nArr.forEach((n: number, i: number) => {
+                        vectorArray.add(n, i);
+                    });
+                    console.log((vectorArray as any)._array);
+                    expect(vectorArray.get(0)).to.be.eq(9);
+                    expect(vectorArray.get(8)).to.be.eq(1);
+                    expect(vectorArray.get(9)).to.be.undefined;
+                    expect(vectorArray.size()).to.be.eq(nArr.length);
+                });
+                it(`при пустом массиве добавление множества значений по кол-ву больше значения vector`, () => {
+                    const nArr: number[] = [9, 8, 7, 6, 5, 4, 3, 2, 1, -9, -8, -7, -6, -5, -4, -3, -2, -1];
+                    nArr.forEach((n: number, i: number) => {
+                        vectorArray.add(n, i);
+                    });
+                    console.log((vectorArray as any)._array);
+                    expect(vectorArray.get(0)).to.be.eq(9);
+                    expect(vectorArray.get(8)).to.be.eq(1);
+                    expect(vectorArray.get(9)).to.be.eq(-9);
+                    expect(vectorArray.size()).to.be.eq(nArr.length);
                 });
             });
         });

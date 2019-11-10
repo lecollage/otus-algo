@@ -1,31 +1,16 @@
-export class SingleArray<T> {
+import {ArrayI} from './ArrayI';
+import {CommonArray} from './CommonArray';
+
+export class SingleArray<T> extends CommonArray<T> implements ArrayI<T> {
     private _array: T[] = [];
-    private ex$indexIsIncorrect: string = `Index is incorrect`;
-    private ex$indexMoreThanSize: string = `Index is more than size of the array`;
-    private ex$emptyArray: string = `Array is empty`;
 
     constructor () {
+        super();
         console.log(`SingleArray.constructor >> `);
     }
 
     public get array (): T[] {
         return this._array;
-    }
-
-    /** Проверит индекс на валидность.
-     * Если индекс не integer или он меньше нуля, то кинет exception.
-     * @param index
-     */
-    private isIndexValid (index: number): boolean {
-        let returnableValue: boolean = true;
-        if (index === null || index === undefined) {
-            returnableValue = false;
-        } else if (!Number.isInteger(index)) {
-            returnableValue = false;
-        } else if (index < 0) {
-            returnableValue = false;
-        }
-        return returnableValue;
     }
 
     public get (index: number): T {
