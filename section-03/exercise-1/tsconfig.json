@@ -9,7 +9,10 @@
     "emitDecoratorMetadata": true,
     "noImplicitAny": false,
     "experimentalDecorators": true,
-    "lib": ["dom", "es2015"],
+    "lib": [
+      "dom",
+      "es2015"
+    ],
     "sourceRoot": "src",
     "outDir": "./dist",
     "types": [
@@ -20,6 +23,7 @@
     "node_modules",
     "lib_js",
     "scripts",
-    "test"
+    "test",
+    "dist"
   ]
 }
