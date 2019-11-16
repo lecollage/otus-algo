@@ -6,7 +6,7 @@
   "main": "./dist/index.js",
   "scripts": {
     "build:ci": "rimraf dist/*&&npx tslint -c tslint.json -p tsconfig.json && npx tsc",
-    "test:ci": "npx mocha --ui bdd ./test --recursive",
+    "test:ci": "npx mocha --ui bdd test --recursive --timeout 150000",
     "watch:test": "mocha -r ts-node/register --watch test/**/*.test.ts --watch-extensions ts",
     "tslint": "npx tslint -c tslint.json -p tsconfig.json"
   },

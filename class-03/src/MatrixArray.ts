@@ -52,6 +52,7 @@ export class MatrixArray<T> extends CommonArray<T> implements ArrayI<T> {
     public add (value: T): void {
         if (this._size === this._array.size() * this._vector) {
             this._array.add(new VectorArray<T>(this._vector), this._array.size());
+            // console.log(`MatrixArray.add >> VectorArray, this._size: ${this._size}`);
         }
         const indexForGettingSingleArray: number = Math.trunc(this._size / this._vector);
         const vectorArray = this._array.get(indexForGettingSingleArray);
