@@ -1,0 +1,14 @@
+{
+  "extends": "tslint-config-standard",
+  "rules": {
+    "object-curly-spacing": [false, "always"],
+    "semicolon": [true, "always"],
+    "ter-indent": [
+      false,
+      4,
+      {
+        "SwitchCase": 1
+      }
+    ]
+  }
+}

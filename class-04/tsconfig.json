@@ -1,0 +1,30 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "esnext",
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "sourceMap": true,
+    "declaration": true,
+    "emitDecoratorMetadata": true,
+    "noImplicitAny": false,
+    "experimentalDecorators": true,
+    "lib": [
+      "dom",
+      "esnext",
+      "esnext.bigint"
+    ],
+    "sourceRoot": "src",
+    "outDir": "./dist",
+    "types": [
+      "node"
+    ]
+  },
+  "exclude": [
+    "node_modules",
+    "lib_js",
+    "scripts",
+    "test",
+    "dist"
+  ]
+}
