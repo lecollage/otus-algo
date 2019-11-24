@@ -36,20 +36,81 @@ describe(`ЛОГИКА РАБОТЫ НА ПРОСТЫХ СЛУЧАЯХ`, () => {
                     expect(result.toString()).to.be.eq(expectedResult.toString());
                 });
             });
+            describe('powerByPowerOfTwoWithMultiplying', () => {
+                it(`args:(2, 10) -> 1024`, () => {
+                    const A: bigint = 2n;
+                    const power: bigint = 10n;
+                    const result = Power.powerByPowerOfTwoWithMultiplying(A, power);
+                    expect(result.toString()).to.be.eq(1024n.toString());
+                });
+                it(`args:(3, 4) -> 81`, () => {
+                    const A: bigint = 3n;
+                    const power: bigint = 4n;
+                    const result = Power.powerByPowerOfTwoWithMultiplying(A, power);
+                    expect(result.toString()).to.be.eq(81n.toString());
+                });
+                it(`args:(5, 25) -> 298023223876953125`, () => {
+                    const A: bigint = 5n;
+                    const power: bigint = 25n;
+                    const result = Power.powerByPowerOfTwoWithMultiplying(A, power);
+                    const expectedResult: bigint = 298023223876953125n;
+                    expect(result.toString()).to.be.eq(expectedResult.toString());
+                });
+                it(`args:(5, 40) -> 9094947017729282379150390625`, () => {
+                    const A: bigint = 5n;
+                    const power: bigint = 40n;
+                    const result = Power.powerByPowerOfTwoWithMultiplying(A, power);
+                    const expectedResult: bigint = 9094947017729282379150390625n;
+                    expect(result.toString()).to.be.eq(expectedResult.toString());
+                });
+            });
+            describe('powerByPowerOfTwoWithDecomposition', () => {
+                it(`args:(2, 10) -> 1024`, () => {
+                    const A: bigint = 2n;
+                    const power: bigint = 10n;
+                    const result = Power.powerByPowerOfTwoWithDecomposition(A, power);
+                    expect(result.toString()).to.be.eq(1024n.toString());
+                });
+                it(`args:(3, 4) -> 81`, () => {
+                    const A: bigint = 3n;
+                    const power: bigint = 4n;
+                    const result = Power.powerByPowerOfTwoWithDecomposition(A, power);
+                    expect(result.toString()).to.be.eq(81n.toString());
+                });
+                it(`args:(5, 25) -> 298023223876953125`, () => {
+                    const A: bigint = 5n;
+                    const power: bigint = 25n;
+                    const result = Power.powerByPowerOfTwoWithDecomposition(A, power);
+                    const expectedResult: bigint = 298023223876953125n;
+                    expect(result.toString()).to.be.eq(expectedResult.toString());
+                });
+                it(`args:(5, 40) -> 9094947017729282379150390625`, () => {
+                    const A: bigint = 5n;
+                    const power: bigint = 40n;
+                    const result = Power.powerByPowerOfTwoWithDecomposition(A, power);
+                    const expectedResult: bigint = 9094947017729282379150390625n;
+                    expect(result.toString()).to.be.eq(expectedResult.toString());
+                });
+            });
         });
     });
 });
-/*describe(`ВРЕМЯ`, () => {
+describe(`ВРЕМЯ`, () => {
     const methods = [
-        `getGCDBySubtraction`,
-        `getGCDByModulo`,
-        `getGCDByStein`
+        // `powerByIteration`,
+        `powerByPowerOfTwoWithMultiplying`,
+        `powerByPowerOfTwoWithDecomposition`
     ];
     const argArr = [
-        {A: 1234567890n, B: 12n},
-        {A: 12345678900n, B: 12n},
-        {A: 123456789000n, B: 1200n}
-        // {A: 9007199254740992, B: 12}
+        {A: 2n, B: 10n},
+        {A: 3n, B: 4n},
+        {A: 5n, B: 25n},
+        {A: 5n, B: 40n},
+        {A: 7n, B: 1000n},
+        {A: 19n, B: 1500n},
+        {A: 578n, B: 10000n},
+        {A: 666n, B: 66666n},
+        {A: 99999n, B: 999999n},
     ];
     argArr.forEach(arg => {
         const A: bigint = arg.A;
@@ -58,10 +119,10 @@ describe(`ЛОГИКА РАБОТЫ НА ПРОСТЫХ СЛУЧАЯХ`, () => {
             it(`${method} >> args:(${A}, ${B})`, (done) => {
                 const timeLabel: string = `${method}-args:(${A}, ${B})`;
                 console.time(timeLabel);
-                // GCD[method](A, B);
+                console.log(`Power[${method}](${A}, ${B}): ${(Power[method](A, B) as bigint).toString()}`);
                 console.timeEnd(timeLabel);
                 done();
             });
         });
     });
-});*/
+});
