@@ -97,7 +97,7 @@ describe(`ЛОГИКА РАБОТЫ НА ПРОСТЫХ СЛУЧАЯХ`, () => {
 });
 describe(`ВРЕМЯ`, () => {
     const methods = [
-        // `powerByIteration`,
+        `powerByIteration`,
         `powerByPowerOfTwoWithMultiplying`,
         `powerByPowerOfTwoWithDecomposition`
     ];
@@ -110,7 +110,7 @@ describe(`ВРЕМЯ`, () => {
         {A: 19n, B: 1500n},
         {A: 578n, B: 10000n},
         {A: 666n, B: 66666n},
-        {A: 99999n, B: 999999n},
+        {A: 6n, B: 666666n},
     ];
     argArr.forEach(arg => {
         const A: bigint = arg.A;
