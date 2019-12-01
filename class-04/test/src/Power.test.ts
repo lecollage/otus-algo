@@ -3,7 +3,7 @@ import * as assert from 'assert';
 import {expect} from 'chai';
 import {} from 'mocha';
 
-import {Power} from '../src/Power';
+import {Power} from '../../src/Power';
 
 describe(`ЛОГИКА РАБОТЫ НА ПРОСТЫХ СЛУЧАЯХ`, () => {
     describe(`Power`, () => {

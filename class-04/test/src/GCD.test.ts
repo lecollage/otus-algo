@@ -3,7 +3,7 @@ import * as assert from 'assert';
 import {expect} from 'chai';
 import {} from 'mocha';
 
-import {GCD} from '../src/GCD';
+import {GCD} from '../../src/GCD';
 
 describe(`ЛОГИКА РАБОТЫ НА ПРОСТЫХ СЛУЧАЯХ`, () => {
     describe(`GCD`, () => {
